@@ -77,3 +77,6 @@ This circuit was assembled on a breadboard and successfully worked in MU128 and 
 </table>
 
 It should be taken into account that this circuit in relation to the SC88 receives only the first half of the entire tone generation (the first 16 out of 32 MIDI channels), since schematically in SC88 two engines are wired through two DACs to two independent stereo outputs: the first PCM69AU is responsible for channels 1-16, the second - for channels 17-32. If necessary, 2 such transceiver boards can be used in the SC88, thus obtaining two independent SPDIF outputs.
+
+<h2>Links</h2>
+<a href="https://esher.ru/blog/887.html">Initial blog post in 2016 https://esher.ru/blog/887.html</a>
