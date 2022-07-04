@@ -79,5 +79,6 @@ This circuit was assembled on a breadboard and successfully worked in MU128 and 
 It should be taken into account that this circuit in relation to the SC88 receives only the first half of the entire tone generation (the first 16 out of 32 MIDI channels), since schematically in SC88 two engines are wired through two DACs to two independent stereo outputs: the first PCM69AU is responsible for channels 1-16, the second - for channels 17-32. If necessary, 2 such transceiver boards can be used in the SC88, thus obtaining two independent SPDIF outputs.
 
 <h2>Links</h2>
-<a href="https://esher.ru/blog/887.html">https://esher.ru/blog/887.html</a> My initial blog post in 2016 
-<a href="https://github.com/nikitalita/MU100-DIT">MU100-DIT</a>, a parallel project for MU-series using TOSLINK.
+<p>href="https://esher.ru/blog/887.html">https://esher.ru/blog/887.html</a> My initial blog post in 2016 </p>
+<p><a href="https://github.com/nikitalita/MU100-DIT">MU100-DIT</a>, a parallel project for MU-series using TOSLINK.</p>
+<p><a href="https://kurohane-net.translate.goog/wiki/index.php?SC-88Pro%E3%81%AB%E5%85%89%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%87%BA%E5%8A%9B%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B&_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=op,wapp">Japanese project using AK4103 too</a></p>
