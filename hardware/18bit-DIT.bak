@@ -1,0 +1,290 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R2
+U 1 1 5DC3EF48
+P 6500 2400
+F 0 "R2" H 6550 2350 50  0000 L CNN
+F 1 "100R" V 6500 2300 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 6430 2400 50  0001 C CNN
+F 3 "~" H 6500 2400 50  0001 C CNN
+	1    6500 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5DC3F200
+P 6150 2250
+F 0 "R1" V 6050 2250 50  0000 C CNN
+F 1 "330R" V 6150 2250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 6080 2250 50  0001 C CNN
+F 3 "~" H 6150 2250 50  0001 C CNN
+	1    6150 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5DC3F607
+P 6300 2500
+F 0 "C1" H 6150 2400 50  0000 L CNN
+F 1 "100nF" H 6350 2400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6338 2350 50  0001 C CNN
+F 3 "~" H 6300 2500 50  0001 C CNN
+	1    6300 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5DC3FA29
+P 6850 2250
+F 0 "C2" V 6598 2250 50  0000 C CNN
+F 1 "100nF" V 6689 2250 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6888 2100 50  0001 C CNN
+F 3 "~" H 6850 2250 50  0001 C CNN
+	1    6850 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L spdif:AK4103AVF U1
+U 1 1 5DC4106D
+P 5400 2300
+F 0 "U1" H 5400 2775 50  0000 C CNN
+F 1 "AK4103AVF" H 5400 2684 50  0000 C CNN
+F 2 "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm" H 5400 2300 50  0001 C CNN
+F 3 "" H 5400 2300 50  0001 C CNN
+	1    5400 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 2050 4850 2050
+Wire Wire Line
+	4850 2050 4850 2100
+Wire Wire Line
+	4850 2600 5050 2600
+Wire Wire Line
+	5050 2100 4850 2100
+Connection ~ 4850 2100
+Wire Wire Line
+	4850 2100 4850 2600
+Wire Wire Line
+	5750 2500 5900 2500
+Wire Wire Line
+	5900 2500 5900 2750
+Wire Wire Line
+	5900 2750 4850 2750
+Wire Wire Line
+	4850 2750 4850 2600
+Connection ~ 4850 2600
+Wire Wire Line
+	5750 2200 5900 2200
+Wire Wire Line
+	5900 2200 5900 2400
+Wire Wire Line
+	5900 2400 5750 2400
+Wire Wire Line
+	5750 2450 5900 2450
+Wire Wire Line
+	5900 2450 5900 2400
+Connection ~ 5900 2400
+Wire Wire Line
+	5750 2250 6000 2250
+Wire Wire Line
+	6300 2250 6500 2250
+Wire Wire Line
+	5750 2350 6300 2350
+Wire Wire Line
+	6400 2350 6400 2550
+Wire Wire Line
+	6400 2550 6500 2550
+Connection ~ 6300 2350
+Wire Wire Line
+	6300 2350 6400 2350
+Wire Wire Line
+	5900 2400 6050 2400
+Wire Wire Line
+	6500 2250 6700 2250
+Connection ~ 6500 2250
+Connection ~ 6300 2650
+$Comp
+L power:+5V #PWR0101
+U 1 1 5DC47800
+P 6300 2950
+F 0 "#PWR0101" H 6300 2800 50  0001 C CNN
+F 1 "+5V" V 6300 3050 50  0000 L CNN
+F 2 "" H 6300 2950 50  0001 C CNN
+F 3 "" H 6300 2950 50  0001 C CNN
+	1    6300 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GNDREF #PWR0102
+U 1 1 5DC47E8E
+P 5900 2750
+F 0 "#PWR0102" H 5900 2500 50  0001 C CNN
+F 1 "GNDREF" H 5700 2700 50  0000 C CNN
+F 2 "" H 5900 2750 50  0001 C CNN
+F 3 "" H 5900 2750 50  0001 C CNN
+	1    5900 2750
+	1    0    0    -1  
+$EndComp
+Connection ~ 5900 2750
+Wire Wire Line
+	4050 2150 4050 1800
+Wire Wire Line
+	4050 1800 4850 1800
+Wire Wire Line
+	4850 1800 4850 2050
+Connection ~ 4850 2050
+Wire Wire Line
+	3950 2450 3950 2150
+Wire Wire Line
+	3950 2150 4050 2150
+Wire Wire Line
+	3950 2850 4750 2850
+Wire Wire Line
+	4750 2850 4750 2350
+Wire Wire Line
+	4750 2350 5050 2350
+Wire Wire Line
+	3950 2750 4700 2750
+Wire Wire Line
+	4700 2750 4700 2300
+Wire Wire Line
+	4700 2300 5050 2300
+Wire Wire Line
+	3950 2650 4650 2650
+Wire Wire Line
+	4650 2650 4650 2250
+Wire Wire Line
+	4650 2250 5050 2250
+Wire Wire Line
+	3950 2550 4600 2550
+Wire Wire Line
+	4600 2550 4600 2200
+Wire Wire Line
+	4600 2200 5050 2200
+$Comp
+L Connector:Conn_01x06_Female J1
+U 1 1 5DC4D2E1
+P 3750 2750
+F 0 "J1" H 3642 2225 50  0000 C CNN
+F 1 "D_IN" H 3642 2316 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 3750 2750 50  0001 C CNN
+F 3 "~" H 3750 2750 50  0001 C CNN
+	1    3750 2750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6300 2650 6300 2750
+Wire Wire Line
+	6300 2950 3950 2950
+$Comp
+L Connector:Conn_01x02_Female J2
+U 1 1 5DC4F4CC
+P 4300 1950
+F 0 "J2" V 4350 1950 50  0000 R CNN
+F 1 "reset" V 4050 2000 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4300 1950 50  0001 C CNN
+F 3 "~" H 4300 1950 50  0001 C CNN
+	1    4300 1950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4050 2150 4300 2150
+Connection ~ 4050 2150
+Wire Wire Line
+	4400 2150 5050 2150
+Wire Wire Line
+	6050 2650 6300 2650
+Wire Wire Line
+	6050 2650 6050 2400
+NoConn ~ 5050 2550
+NoConn ~ 5050 2500
+NoConn ~ 5050 2450
+NoConn ~ 5050 2400
+NoConn ~ 5750 2600
+NoConn ~ 5750 2550
+NoConn ~ 5750 2300
+NoConn ~ 5750 2150
+NoConn ~ 5750 2100
+NoConn ~ 5750 2050
+$Comp
+L Device:Transformer_1P_1S T1
+U 1 1 5DC5B6BE
+P 7650 2350
+F 0 "T1" H 7650 2731 50  0000 C CNN
+F 1 "PE65612NL" H 7650 2640 50  0000 C CNN
+F 2 "Transformer_THT:Transformer_NF_ETAL_1-1_P1200" H 7650 2350 50  0001 C CNN
+F 3 "~" H 7650 2350 50  0001 C CNN
+	1    7650 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 2250 7250 2250
+Wire Wire Line
+	7250 2250 7250 2150
+Wire Wire Line
+	6500 2550 7250 2550
+Connection ~ 6500 2550
+$Comp
+L Connector:Conn_Coaxial J3
+U 1 1 5DC5E798
+P 8500 2350
+F 0 "J3" H 8600 2325 50  0000 L CNN
+F 1 "Conn_Coaxial" H 8600 2234 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 8500 2350 50  0001 C CNN
+F 3 " ~" H 8500 2350 50  0001 C CNN
+	1    8500 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 2150 8300 2150
+Wire Wire Line
+	8300 2150 8300 2350
+Wire Wire Line
+	8050 2550 8500 2550
+Connection ~ 6300 2950
+Text Notes 4000 2450 0    50   ~ 0
+gnd
+Text Notes 4000 2550 0    50   ~ 0
+sysclk
+Text Notes 4000 2650 0    50   ~ 0
+data
+Text Notes 4000 2750 0    50   ~ 0
+qclk
+Text Notes 4000 2850 0    50   ~ 0
+wclk
+Text Notes 4000 2950 0    50   ~ 0
++5v
+$Comp
+L Device:C C3
+U 1 1 5DC68FEA
+P 6100 2750
+F 0 "C3" V 6050 2650 50  0000 C CNN
+F 1 "100nF" V 6250 2750 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6138 2600 50  0001 C CNN
+F 3 "~" H 6100 2750 50  0001 C CNN
+	1    6100 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5900 2750 5950 2750
+Wire Wire Line
+	6250 2750 6300 2750
+Connection ~ 6300 2750
+Wire Wire Line
+	6300 2750 6300 2950
+$EndSCHEMATC
