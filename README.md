@@ -4,7 +4,7 @@ Adding  digital output for old synths
 Surely everyone who used to know DOS era met in games the choice of musical accompaniment - General MIDI, Roland Sound Canvas, Yamaha XG. I will not talk about what wonderful devices these are, and how well they played MIDI. Until the end of the 90s, all these home desktop romplers, like most other professional devices, had only analog outputs, however, they were quite acceptable in quality. In early 2010, out of nostalgia, I bought several devices of that era on ebay - these are the Roland Sound Canvas 88 Pro, Roland MT-32, Yamaha MU128 and Yamaha AN200. The first three should be familiar to gamers of the early 90s, while the AN200 module is an analog modeling synthesizer based on the Yamaha PLG150-AN plug-in card. Later Yamaha MU1000/2000 tone generators were also sold on the site - their difference from the MU128 consisted in a slightly expanded version of the sample bank, as well as in the presence of an optical TOSLINK output.
 
 Actually, the presence of optics in the MU2000 prompted me to start comparing circuits to see if it was possible to modify the MU128 circuit and get a digital output on my own. In the MU2000 service manual, the optical output circuitry is based on a proprietary Yamaha YM3437C chip, which is very difficult to get for an ordinary radio amateur. We need to look for a more general DIT. A Google search on this topic led me to a <a href="https://nfggames.com/forum2/index.php?topic=4063.0">mod for MU10</a>. The author of the mod relied on the <a href="http://www3.big.or.jp/~fujikko/sc88vl/kaizo.html">Japanese mod for the Roland SC-88VL</a>. The mod is based on the TC9231N chip from Toshiba, which implements a digital audio interface according to the SPDIF/TOSLINK standard. The chip can be ordered on ebay, it costs an average of $ 2.5 per piece (note: this was in 2010, now the chip is almost impossible to find); the rest of the parts are sold at any radio store. I assembled a Japanese version on a breadboard, and it turned out to be working - with a small caveat. The DAC of the Roland SC88 is 18-bit, while the TC9231N is 16-bit. The Japanese author made a binding for this, which allows either cutting off the top 2 bits in the stream - which could lead to clipping, or shifting the stream 2 bits lower (cutting off the bottom 2 bits), which led to a decrease in volume. In any case, 2 bits of information were lost - and that did not suit me.
-<p><img src="images/old_2.jpg" width="45%"><img src="images/old_1.jpg" width="45%"></p>
+<p><img src="images/old_2.jpg" height="300"><img src="images/old_1.jpg" height="300"></p>
 
 I started looking for a transceiver that works with 18-bit stream in "hardware" mode, i.e. that does not require setting the operating mode using an additional microcontroller. After a lot of experimentation with DIT 4096, 4192, TC9271N and others, I finally found a transceiver that works native with 18-bit stream - AKM AK4103AVF. Thanks to the internal pull-up and pull-down resistors, you can get by with a minimum of detail.
 
@@ -22,7 +22,7 @@ It has been noticed that if the circuit is turned on at the same time as the mod
 <tr><td>data</td>	<td>CN105 pin 3</td>	<td>IC36 pin 15</td>	<td>IC16 pin 15</td></tr>
 <tr><td>qclk</td>	<td>IC35 pin 9</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
 <tr><td>wclk</td>	<td>CN105 pin 6</td>	<td>IC36 pin 13</td>	<td>IC16 pin 13</td></tr>
-<tr><td>reset</td>	<td></td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
+<tr><td>reset</td>	<td><b>to be found</b></td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
 </table>
 
 
@@ -69,7 +69,7 @@ By the way, in 2010, the service manual for the MU128 could only be found on the
 
 In 2021, I suddenly decided to re-release the development in a decent way.
 
-<p><img src="images/SPDIF.jpg" height="150"><img src="images/new_1.jpg" height="150"><img src="images/new_2.jpg" height="150"></p>
+<p><img src="images/SPDIF.jpg" height="170"><img src="images/new_1.jpg" height="170"><img src="images/new_2.jpg" height="170"></p>
 <p>Gerbers: <a href="hardware/gerber/dit_0.2_gerber.zip">dit_0.2_gerber.zip</a></p>
 <h2>Partlist</h2>
 <table border=1>
@@ -85,5 +85,5 @@ It should be taken into account that this circuit in relation to the SC88 receiv
 
 <h2>Links</h2>
 <p><a href="https://esher.ru/blog/887.html">https://esher.ru/blog/887.html</a> My initial blog post in 2016 </p>
-<p><a href="https://github.com/nikitalita/MU100-DIT">MU100-DIT</a>, a parallel project for MU-series using TOSLINK.</p>
+<p><a href="https://github.com/nikitalita/MU100-DIT">MU100-DIT</a>, a parallel project for MU-series using TOSLINK, by nikitalita</p>
 <p><a href="https://kurohane-net.translate.goog/wiki/index.php?SC-88Pro%E3%81%AB%E5%85%89%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%87%BA%E5%8A%9B%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B&_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=op,wapp">Japanese project using AK4103 too</a></p>
