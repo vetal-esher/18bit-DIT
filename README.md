@@ -16,7 +16,7 @@ The input is I2S, for this we need the data, lrck, bck and sclk lines on the sou
 It has been noticed that if the circuit is turned on at the same time as the module, the AK4103 does not pick up the frequency and the digital output is silent. Empirically revealed that the frequency is caught after the initialization of the module, you need a power delay. In 2016, without thinking twice, I simply brought the "spdif reset" button to the case (shown in the diagram). At the beginning of June 2022, nikitalita contacted me and suggested to use the BRESET line in the PLG expansion connector. An oscilloscope check revealed that BRESET remained low for about 70ms, which was enough for the DIT to pick up the frequency. Let's find the lines on all three devices:
 
 <table border=1>
-<tr><th>I2S </th><th>Roland SC-88 Pro</th><th>Yamaha MU128</th><th>Yamaha AN200</th></tr>
+<tr><th>I2S</th><th>Roland SC-88 Pro</th><th>Yamaha MU128</th><th>Yamaha AN200</th></tr>
 <tr><td>syslck</td>	<td>CN105 pin 5</td>	<td>IC39 pin 16</td>	<td>IC17 pin 160</td></tr>
 <tr><td>data</td>	<td>CN105 pin 3</td>	<td>IC36 pin 15</td>	<td>IC16 pin 15</td></tr>
 <tr><td>qclk</td>	<td>IC35 pin 9</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
@@ -39,21 +39,21 @@ The SC88 has an 18-bit PCM69AU, while the MU128 and AN200 have an 18-bit NEC D63
 
 <tr><td>default</td><td>-</td><td>-</td><td>-</td><td>0</td><td>0</td><td>0</td><td>1</td><td>float</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>SC88</td>
-<td>32000Hz</td><td>8.192MHz</td><td>8.192MHz</td>
+<td>32000Hz</td><td>8.192 MHz</td><td>8.192 MHz</td>
 <td>1</td><td>0</td><td>0</td>
 <td>1</td><td>0</td>
 <td>1</td><td>0</td>
 <td>1</td><td>1</td><td>0</td><td>0</td>
 </tr>
 <tr><td>MU128</td>
-<td>44100Hz</td><td>11.2896 MHz</td><td>2.82242 MHz</td>
+<td>44100Hz</td><td>11.2896 MHz</td><td>2.8224 MHz</td>
 <td>0</td><td>0</td><td>0</td>
 <td>1</td><td>0</td>
 <td>1</td><td>0</td>
 <td>0</td><td>0</td><td>0</td><td>0</td>
 </tr>
 <tr><td>AN200</td>
-<td>44100Hz</td><td>16.9344 MHz</td><td>2.82244 MHz</td>
+<td>44100Hz</td><td>16.9344 MHz</td><td>2.8224 MHz</td>
 <td>0</td><td>0</td><td>0</td>
 <td>1</td><td>0</td>
 <td>1</td><td>0</td>
