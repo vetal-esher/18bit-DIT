@@ -34,7 +34,7 @@ It has been noticed that if the circuit is turned on at the same time as the mod
 <p><img src="images/an200_1.jpg" height="250"><img src="images/an200_2.jpg" height="250"><img src="images/an200_3.jpg" height="250"></p>
 
 
-The SC88 has an 18-bit PCM69AU, while the MU128 and AN200 have an 18-bit NEC D63200. According to the specification, the SC-88 has a sample rate of 32kHz, MU128 and AN200 - 44kHz. According to the datasheet, we need to set the following modes: audio routing mode - normal, synchronous mode, 18bit right justified. Let's measure frequencies:
+The SC88 has an 18-bit PCM69AU, while the MU128 and AN200 have an 18-bit NEC D63200. According to the specification, the SC-88 has a sample rate of 32kHz, MU128 and AN200 - 44kHz. Following the datasheet, we need to set the following modes: audio routing mode - normal, synchronous mode, 18bit right justified. Let's measure frequencies:
 <table border=1>
 <tr><th></th><th>wlck</th><th>sysclk</th><th>qclk</th><th>dif0</th><th>dif1</th><th>dif2</th><th>ans</th><th>trans</th><th>cks0</th><th>cks1</th><th>fs0</th><th>fs1</th><th>fs2</th><th>fs3</th></tr>
 
@@ -82,7 +82,9 @@ In 2021, I suddenly decided to re-release the development in a decent way.
 </table>
 
 <h2>Roland SC88 Pro notes</h2>
-<p>It should be taken into account that this circuit in relation to the SC88 receives only the first half of the entire tone generation (the first 16 out of 32 MIDI channels), since schematically in SC88 two engines are wired through two DACs to two independent stereo outputs: the first PCM69AU is responsible for channels 1-16, the second - for channels 17-32. If necessary, 2 such transceiver boards can be used in the SC88, thus obtaining two independent SPDIF outputs. Also, for SC88, DIT can be configured as 20=bit right justified, but you will get only significantly lower volume. </p>
+<p>It should be taken into account that this circuit in relation to the SC88 receives only the first half of the entire tone generation (the first 16 out of 32 MIDI channels), since schematically in SC88 two engines are wired through two DACs to two independent stereo outputs: the first PCM69AU is responsible for channels 1-16, the second - for channels 17-32. If necessary, 2 such transceiver boards can be used in the SC88, thus obtaining two independent SPDIF outputs. Also, for SC88, DIT can be configured as 20-bit right justified, but you will get only significantly lower volume: </p>
+
+<p><img src="images/20bit_vs_18bit.png"></p>
 
 <h2>Links</h2>
 <p><a href="https://esher.ru/blog/887.html">https://esher.ru/blog/887.html</a> My initial blog post in 2016 </p>
