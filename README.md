@@ -22,7 +22,7 @@ It has been noticed that if the circuit is turned on at the same time as the mod
 <tr><td>data</td>	<td>CN105 pin 3</td>	<td>IC36 pin 15</td>	<td>IC16 pin 15</td></tr>
 <tr><td>qclk</td>	<td>IC35 pin 8</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
 <tr><td>wclk</td>	<td>CN105 pin 6</td>	<td>IC36 pin 13</td>	<td>IC16 pin 13</td></tr>
-<tr><td>reset</td>	<td><b>IC35 pin 9</b></td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
+<tr><td>reset</td>	<td>IC35 pin 9</td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
 </table>
 
 
