@@ -14,15 +14,15 @@ Let's sketch out the diagram first. Given that the board should be as versatile 
 
 The input is I2S, for this we need the data, lrck, bck and sclk lines on the sources. In different datasheets, these lines may be called differently, but their essence is always the same - DATA=SI=MDAC=SDTI, LRCK=LRCX=MWCLK, CLK=MQCLK, etc. All of these lines should be easily found in the circuits included in the DAC, with the exception of sysclk, which will have to be searched by the oscilloscope at different points in the circuit. Usually, in I2S, sysclk (or mclk) is not needed for transmission, but in AK4103AVF the line is used for correct synchronization.
 
-It has been noticed that if the circuit is turned on at the same time as the module, the AK4103 does not pick up the frequency and the digital output is silent. Empirically revealed that the frequency is caught after the initialization of the module, you need a power delay. In 2016, without thinking twice, I simply brought the "spdif reset" button to the case (shown in the diagram). At the beginning of June 2022, <a href="https://github.com/nikitalita/MU100-DIT">nikitalita</a> contacted me and suggested to use the BRESET line in the PLG expansion connector. An oscilloscope check revealed that BRESET remained low for about 70ms, which was enough for the DIT to pick up the frequency. <b>The reset line for SC88 Pro is not marked as i have to test some line before.</b> Let's find the lines on all three devices:
+It has been noticed that if the circuit is turned on at the same time as the module, the AK4103 does not pick up the frequency and the digital output is silent. Empirically revealed that the frequency is caught after the initialization of the module, you need a power delay. In 2016, without thinking twice, I simply brought the "spdif reset" button to the case (shown in the diagram). At the beginning of June 2022, <a href="https://github.com/nikitalita/MU100-DIT">nikitalita</a> contacted me and suggested to use the BRESET line in the PLG expansion connector. An oscilloscope check revealed that BRESET remained low for about 70ms, which was enough for the DIT to pick up the frequency. Let's find the lines on all three devices:
 
 <table border=1>
 <tr><th>I2S</th><th>Roland SC-88 Pro</th><th>Yamaha MU128</th><th>Yamaha AN200</th></tr>
 <tr><td>syslck</td>	<td>CN105 pin 5</td>	<td>IC39 pin 16</td>	<td>IC17 pin 160</td></tr>
 <tr><td>data</td>	<td>CN105 pin 3</td>	<td>IC36 pin 15</td>	<td>IC16 pin 15</td></tr>
-<tr><td>qclk</td>	<td>IC35 pin 9</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
+<tr><td>qclk</td>	<td>IC35 pin 8</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
 <tr><td>wclk</td>	<td>CN105 pin 6</td>	<td>IC36 pin 13</td>	<td>IC16 pin 13</td></tr>
-<tr><td>reset</td>	<td><b>to be found</b></td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
+<tr><td>reset</td>	<td><b>IC35 pin 9</b></td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
 </table>
 
 
@@ -81,7 +81,8 @@ In 2021, I suddenly decided to re-release the development in a decent way.
 <tr><td>R2</td><td>100R</td><td>0402</td></tr>
 </table>
 
-It should be taken into account that this circuit in relation to the SC88 receives only the first half of the entire tone generation (the first 16 out of 32 MIDI channels), since schematically in SC88 two engines are wired through two DACs to two independent stereo outputs: the first PCM69AU is responsible for channels 1-16, the second - for channels 17-32. If necessary, 2 such transceiver boards can be used in the SC88, thus obtaining two independent SPDIF outputs.
+<h2>Roland SC88 Pro notes</h2>
+<p>It should be taken into account that this circuit in relation to the SC88 receives only the first half of the entire tone generation (the first 16 out of 32 MIDI channels), since schematically in SC88 two engines are wired through two DACs to two independent stereo outputs: the first PCM69AU is responsible for channels 1-16, the second - for channels 17-32. If necessary, 2 such transceiver boards can be used in the SC88, thus obtaining two independent SPDIF outputs. Also, for SC88, DIT can be configured as 20=bit right justified, but you will get only significantly lower volume. </p>
 
 <h2>Links</h2>
 <p><a href="https://esher.ru/blog/887.html">https://esher.ru/blog/887.html</a> My initial blog post in 2016 </p>
