@@ -89,7 +89,7 @@ In 2021, I suddenly decided to re-release the development in a decent way.
 <h2>Links</h2>
 <p><a href="https://esher.ru/blog/887.html">https://esher.ru/blog/887.html</a> My initial blog post in 2016 </p>
 <p><a href="https://github.com/nikitalita/MU100-DIT">MU100-DIT</a>, a parallel project for MU-series using TOSLINK, by nikitalita</p>
-<p><a href="https://kurohane-net.translate.goog/wiki/index.php?SC-88Pro%E3%81%AB%E5%85%89%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%87%BA%E5%8A%9B%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B&_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=op,wapp">Japanese project using AK4103 too</a></p>
+<p><a href="[https://kurohane-net.translate.goog/wiki/index.php?SC-88Pro%E3%81%AB%E5%85%89%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%87%BA%E5%8A%9B%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B&_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=op,wapp](https://kurohane-net.translate.goog/wiki/index.php?SC-88Pro%E3%81%AB%E5%85%89%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%87%BA%E5%8A%9B%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B&_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=wapp)">Japanese project using AK4103 too</a></p>
 <p><a href="https://esher.ru/i/f/887/887/AK4103AVF.pdf">AKM AK4103A datasheet</a></p>
 <p><a href="https://esher.ru/i/f/900/900/an200sm.pdf.gz">Yamaha AN200 service manual</a></p>
 <p><a href="https://esher.ru/i/f/888/888/Roland_SC-88Pro_ServiceNotes.pdf.gz">Roland SC88 Pro service notes (in japan)</a></p>
