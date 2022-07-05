@@ -82,7 +82,7 @@ In 2021, I suddenly decided to re-release the development in a decent way.
 </table>
 
 <h2>Roland SC88 Pro notes</h2>
-<p><strike>It should be taken into account that this circuit in relation to the SC88 receives only the first half of the entire tone generation (the first 16 out of 32 MIDI channels), since schematically in SC88 two engines are wired through two DACs to two independent stereo outputs: the first PCM69AU is responsible for channels 1-16, the second - for channels 17-32. If necessary, 2 such transceiver boards can be used in the SC88, thus obtaining two independent SPDIF outputs.</strike> Checked, this appeared not to be true. Also, for SC88, DIT can be configured as 20-bit right justified, but you will get only significantly lower volume. This is the same melody recorded 20-bit first, then 18-bit:</p>
+<p>According to Japanese DIT project, the actual stream is 20bit, so AK4103 can be configured as 20-bit right justified, but you will get only significantly lower volume. This is the same melody recorded 20-bit first, then 18-bit:</p>
 
 <p><img src="images/20bit_vs_18bit.png"></p>
 
