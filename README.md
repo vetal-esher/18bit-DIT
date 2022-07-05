@@ -18,10 +18,10 @@ It has been noticed that if the circuit is turned on at the same time as the mod
 
 <table border=1>
 <tr><th>I2S</th><th>Roland SC-88 Pro</th><th>Yamaha MU128</th><th>Yamaha AN200</th></tr>
-<tr><td>syslck</td>	<td>CN105 pin 5</td>	<td>IC39 pin 16</td>	<td>IC17 pin 160</td></tr>
+<tr><td>sysclk</td>	<td>CN105 pin 5</td>	<td>IC39 pin 16</td>	<td>IC17 pin 160</td></tr>
 <tr><td>data</td>	<td>CN105 pin 3</td>	<td>IC36 pin 15</td>	<td>IC16 pin 15</td></tr>
-<tr><td>qclk</td>	<td>IC35 pin 8</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
-<tr><td>wclk</td>	<td>CN105 pin 6</td>	<td>IC36 pin 13</td>	<td>IC16 pin 13</td></tr>
+<tr><td>qclk(bclk)</td>	<td>IC35 pin 8</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
+<tr><td>wclk(lrck)</td>	<td>CN105 pin 6</td>	<td>IC36 pin 13</td>	<td>IC16 pin 13</td></tr>
 <tr><td>reset</td>	<td>IC35 pin 9</td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
 </table>
 
