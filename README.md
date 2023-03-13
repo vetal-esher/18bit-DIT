@@ -12,16 +12,16 @@ Let's sketch out the diagram first. Given that the board should be as versatile 
 
 <p><img src="images/schematic.png"></p>
 
-The input is I2S, for this we need the data, lrck, bck and sclk lines on the sources. In different datasheets, these lines may be called differently, but their essence is always the same - DATA=SI=MDAC=SDTI, LRCK=LRCX=MWCLK, CLK=MQCLK, etc. All of these lines should be easily found in the circuits included in the DAC, with the exception of sysclk, which will have to be searched by the oscilloscope at different points in the circuit. Usually, in I2S, sysclk (or mclk) is not needed for transmission, but in AK4103AVF the line is used for correct synchronization.
+The input is I2S, for this we need the sdata, lrck(wclk), bck and mclk lines on the sources. In different datasheets, these lines may be called differently, but their essence is always the same - DATA=SDATA=SI=MDAC=SDTI, LRCK=LRCX=MWCLK, CLK=MQCLK=BCK, etc. All of these lines should be easily found in the circuits included in the DAC, with the exception of mclk, which will have to be searched by the oscilloscope at different points in the circuit. Usually, in I2S, mclk is not needed for transmission, but in AK4103AVF the line is used for correct synchronization.
 
 It has been noticed that if the circuit is turned on at the same time as the module, the AK4103 does not pick up the frequency and the digital output is silent. Empirically revealed that the frequency is caught after the initialization of the module, you need a power delay. In 2016, without thinking twice, I simply brought the "spdif reset" button to the case (shown in the diagram). At the beginning of June 2022, <a href="https://github.com/nikitalita/MU100-DIT">nikitalita</a> contacted me and suggested to use the BRESET line in the PLG expansion connector. An oscilloscope check revealed that BRESET remained low for about 70ms, which was enough for the DIT to pick up the frequency. Let's find the lines on all three devices:
 
 <table border=1>
 <tr><th>I2S</th><th>Roland SC-88 Pro</th><th>Yamaha MU128</th><th>Yamaha AN200</th></tr>
-<tr><td>sysclk</td>	<td>CN105 pin 5</td>	<td>IC39 pin 16</td>	<td>IC17 pin 160</td></tr>
-<tr><td>data</td>	<td>CN105 pin 3</td>	<td>IC36 pin 15</td>	<td>IC16 pin 15</td></tr>
-<tr><td>qclk(bclk)</td>	<td>IC35 pin 8</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
-<tr><td>wclk(lrck)</td>	<td>CN105 pin 6</td>	<td>IC36 pin 13</td>	<td>IC16 pin 13</td></tr>
+<tr><td>mclk</td>	<td>CN105 pin 5</td>	<td>IC39 pin 16</td>	<td>IC17 pin 160</td></tr>
+<tr><td>sdata</td>	<td>CN105 pin 3</td>	<td>IC36 pin 15</td>	<td>IC16 pin 15</td></tr>
+<tr><td>bck</td>	<td>IC35 pin 8</td>	<td>IC36 pin 16</td>	<td>IC16 pin 16</td></tr>
+<tr><td>wclk</td>	<td>CN105 pin 6</td>	<td>IC36 pin 13</td>	<td>IC16 pin 13</td></tr>
 <tr><td>reset</td>	<td>IC35 pin 9</td>		<td>IC34 pin 19</td>	<td>CN5 pin 4</td></tr>
 </table>
 
@@ -36,28 +36,22 @@ It has been noticed that if the circuit is turned on at the same time as the mod
 
 The SC88 has an 18-bit PCM69AU, while the MU128 and AN200 have an 18-bit NEC D63200. According to the specification, the SC-88 has a sample rate of 32kHz, MU128 and AN200 - 44kHz. Following the datasheet, we need to set the following modes: audio routing mode - normal, synchronous mode, 18bit right justified. Let's measure frequencies:
 <table border=1>
-<tr><th></th><th>wlck</th><th>sysclk</th><th>qclk</th><th>dif0</th><th>dif1</th><th>dif2</th><th>ans</th><th>trans</th><th>cks0</th><th>cks1</th><th>fs0</th><th>fs1</th><th>fs2</th><th>fs3</th></tr>
+<tr><th></th><th>wlck</th><th>mclk</th><th>bck</th><th>dif0</th><th>dif1</th><th>dif2</th><th>cks0</th><th>cks1</th><th>fs0</th><th>fs1</th><th>fs2</th><th>fs3</th></tr>
 
 <tr><td>default</td><td>-</td><td>-</td><td>-</td><td>0</td><td>0</td><td>0</td><td>1</td><td>float</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>SC88</td>
 <td>32000Hz</td><td>8.192 MHz</td><td>8.192 MHz</td>
 <td>1</td><td>0</td><td>0</td>
-<td>1</td><td>0</td>
-<td>1</td><td>0</td>
 <td>1</td><td>1</td><td>0</td><td>0</td>
 </tr>
 <tr><td>MU128</td>
 <td>44100Hz</td><td>11.2896 MHz</td><td>2.8224 MHz</td>
 <td>0</td><td>0</td><td>0</td>
-<td>1</td><td>0</td>
-<td>1</td><td>0</td>
 <td>0</td><td>0</td><td>0</td><td>0</td>
 </tr>
 <tr><td>AN200</td>
 <td>44100Hz</td><td>16.9344 MHz</td><td>2.8224 MHz</td>
 <td>0</td><td>0</td><td>0</td>
-<td>1</td><td>0</td>
-<td>1</td><td>0</td>
 <td>0</td><td>0</td><td>0</td><td>0</td>
 </tr>
 </table>
