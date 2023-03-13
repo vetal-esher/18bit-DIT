@@ -38,7 +38,7 @@ The SC88 has an 18-bit PCM69AU, while the MU128 and AN200 have an 18-bit NEC D63
 <table border=1>
 <tr><th></th><th>wlck</th><th>mclk</th><th>bck</th><th>dif0</th><th>dif1</th><th>dif2</th><th>cks0</th><th>cks1</th><th>fs0</th><th>fs1</th><th>fs2</th><th>fs3</th></tr>
 
-<tr><td>default</td><td>-</td><td>-</td><td>-</td><td>0</td><td>0</td><td>0</td><td>1</td><td>float</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>default</td><td>-</td><td>-</td><td>-</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>SC88</td>
 <td>32000Hz</td><td>8.192 MHz</td><td>8.192 MHz</td>
 <td>1</td><td>0</td><td>0</td>
