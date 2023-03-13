@@ -36,25 +36,29 @@ It has been noticed that if the circuit is turned on at the same time as the mod
 
 The SC88 has an 18-bit PCM69AU, while the MU128 and AN200 have an 18-bit NEC D63200. According to the specification, the SC-88 has a sample rate of 32kHz, MU128 and AN200 - 44kHz. Following the datasheet, we need to set the following modes: audio routing mode - normal, synchronous mode, 18bit right justified. Let's measure frequencies:
 <table border=1>
-<tr><th></th><th>wlck</th><th>mclk</th><th>bck</th><th>dif0</th><th>dif1</th><th>dif2</th><th>cks0</th><th>cks1</th><th>fs0</th><th>fs1</th><th>fs2</th><th>fs3</th></tr>
+<tr><th></th><th>wlck</th><th>sysclk</th><th>qclk</th><th>dif0</th><th>dif1</th><th>dif2</th><th>cks0</th><th>cks1</th><th>fs0</th><th>fs1</th><th>fs2</th><th>fs3</th></tr>
 
 <tr><td>default</td><td>-</td><td>-</td><td>-</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>SC88</td>
 <td>32000Hz</td><td>8.192 MHz</td><td>8.192 MHz</td>
 <td>1</td><td>0</td><td>0</td>
+<td>1</td><td>0</td>
 <td>1</td><td>1</td><td>0</td><td>0</td>
 </tr>
 <tr><td>MU128</td>
 <td>44100Hz</td><td>11.2896 MHz</td><td>2.8224 MHz</td>
 <td>0</td><td>0</td><td>0</td>
+<td>1</td><td>0</td>
 <td>0</td><td>0</td><td>0</td><td>0</td>
 </tr>
 <tr><td>AN200</td>
 <td>44100Hz</td><td>16.9344 MHz</td><td>2.8224 MHz</td>
 <td>0</td><td>0</td><td>0</td>
+<td>1</td><td>0</td>
 <td>0</td><td>0</td><td>0</td><td>0</td>
 </tr>
 </table>
+
 By the way, in 2010, the service manual for the MU128 could only be found on the same Ebay for money. I bought it, got a PDF, and immediately shared it on my site for free for everyone who seeks it. After a few weeks, this service manual was no longer sold :)
 
 <p>This circuit was assembled on a breadboard and successfully worked in MU128 and AN200 in 2016.</p>
